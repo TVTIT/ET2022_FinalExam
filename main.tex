@@ -1,0 +1,434 @@
+% This template is created by SV Bùi Vân Anh, và Thầy Nguyễn Tiến Hòa từ phòng Lab xử lý tín hiệu băng gốc hệ thống 5G. Chúng tôi rất vui nếu được nhắc đến trong lời cảm ơn.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article} % Tạo một bản báo cáo
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc} % Để sử dụng Tiếng Việt
+\usepackage[fontsize=13pt]{scrextend} % Set fontsize=13pt
+%\usepackage[paperheight=29.7cm,paperwidth=21cm,right=2cm,left=3cm,top=2cm,bottom=2.5cm]{geometry}% Chuẩn A4, căn lề phải, trái, trên, dưới.
+\usepackage[paperheight=29.7cm,paperwidth=21cm,right=2cm,left=3cm,top=2cm,bottom=2.5cm,twoside]{geometry}% Chuẩn A4, căn lề phải, trái, trên, dưới.
+\usepackage{changepage}
+\usepackage{mathptmx} % Time New Roman
+\usepackage{amsmath}
+\usepackage{graphicx} % Thư viện chèn ảnh
+\usepackage{float} % Set vị trí chèn ảnh
+\usepackage{makecell} % Tạo bảng
+\usepackage{tikz} % Thư viện tạo khung bìa
+\usetikzlibrary{calc} % Thư viện tikz
+\usepackage{indentfirst} % Thư viện thụt đầu dòng
+\usepackage{booktabs} % To thicken table lines
+\renewcommand{\baselinestretch}{1.2} % Giãn dòng 1.2
+\setlength{\parskip}{6pt} % Spacing after
+\setlength{\parindent}{1cm} % Set khoảng cách thụt đầu dòng mỗi đoạn
+\usepackage{titlesec} % Thư viện để set up các kiểu chữ
+\usepackage[justification=centering]{caption} % Caption luôn căn giữa
+\setcounter{secnumdepth}{4} % 4 Heading
+\titlespacing*{\section}{0pt}{0pt}{30pt} % Heading 1
+\titleformat*{\section}{\fontsize{16pt}{0pt}\selectfont \bfseries \centering}
+
+\titlespacing*{\subsection}{0pt}{10pt}{0pt} % Heading 2
+\titleformat*{\subsection}{\fontsize{14pt}{0pt}\selectfont \bfseries}
+
+\titlespacing*{\subsubsection}{0pt}{10pt}{0pt} % Heading 3
+\titleformat*{\subsubsection}{\fontsize{13pt}{0pt}\selectfont \bfseries \itshape}
+
+\titlespacing*{\paragraph}{0pt}{10pt}{0pt} % Heading 4
+\titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
+
+\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Figure}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\usepackage[font=bf]{caption}
+\captionsetup[figure]{labelsep=space}
+
+\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Table}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\captionsetup[table]{labelsep=space}
+
+\usepackage{tabularx}
+\newcolumntype{s}{>{\hsize=.3\hsize}X}
+\newcolumntype{y}{>{\hsize=.4\hsize}X}
+\newcolumntype{d}{>{\hsize=.1\hsize}X}
+\newcolumntype{a}{>{\hsize=1.1\hsize}X}
+\newcolumntype{g}{>{\hsize=5\hsize}X}
+\renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}} % Thay đổi đánh số phương trình mặc định
+\newtheorem{theorem}{Định lý}[section]
+\newtheorem{defn}[theorem]{Định nghĩa}
+\newtheorem{corollary}[theorem]{Hệ quả}
+\newtheorem{lemma}[theorem]{Bổ đề}
+
+\usepackage{lipsum} % Thư viện tạo chữ linh tinh.
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\refname}{REFERENCES}
+
+\usepackage[unicode]{hyperref}
+\usepackage{colortbl}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage{forloop}
+\newcounter{loopcntr}
+\newcommand{\rpt}[2][1]{\forloop{loopcntr}{0}{\value{loopcntr}<#1}{#2}}
+
+\begin{document}
+
+\input{Bia} % Bìa đồ án.
+
+%\input{LoiCamOn}
+
+%\input{DanhGia} % Đánh giá quyển đồ án tốt nghiệp cho giảng viên hướng dẫn và cán bộ phản biện.
+
+%\input{LoiNoiDau} % Lời nói đầu.
+
+%\input{LoiCamDoan} % Lời cam đoan.
+
+ % Tạo mục lục tự động
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents 
+\thispagestyle{empty}
+\cleardoublepage
+
+\input{Abbreviations} % Danh mục ký hiệu và chữ viết tắt
+
+%Tạo danh mục hình vẽ.
+{\let\oldnumberline\numberline
+\renewcommand{\numberline}{Figure~\oldnumberline}
+\listoffigures} 
+\phantomsection\addcontentsline{toc}{section}{\numberline {} LIST OF FIGURES}
+\newpage
+
+ %Tạo danh mục bảng biểu.
+% {\let\oldnumberline\numberline
+% \renewcommand{\numberline}{Bảng~\oldnumberline}
+% \listoftables}
+% \phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC BẢNG BIỂU}
+% \newpage
+
+%\input{Abstract} % Tóm tắt đồ án 
+
+% \pagenumbering{arabic} % Đánh số thứ tự 1,2,3...
+% \section*{SECTION 7. CHANNEL MODEL(S) FOR 0.5 - 100 GHZ}
+% \addcontentsline{toc}{section}{\numberline{}7   Channel model(s) for 0.5 - 100 GHz}
+% \setcounter{section}{7}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+
+% \subsection{Coordinate system}
+% \subsubsection{Definition}
+% The Cartesian coordinate system is used, where x, y, z axes; angles; unit vectors are shown in figure \ref{coordinate} below. Also, figure \ref{coordinate} characterizes the zenith angle $\theta$ and the azimuth angle $\phi$. The zenith angle $\theta$ is measured from the positive z-axis ($0^\circ$ points to zenith, $90^\circ$ points to horizon) and the azimuth angle $\phi$ is measured from positive x-axis in the (Oxy) plane. Moreover, spherical unit vectors define field components.
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.8\textwidth, clip, trim=5 5 5 5]{Firgue 7.1.1.pdf}
+%     %\caption{Definition of spherical angles and spherical unit vectors in a Cartesian oordinate system, where $\hat{n}$ is the given direction, $\hat{\theta}$ and  $\hat{\phi}$ are the spherical basis vectors}
+%     \caption{Definition of Cartesian coordinate system~\cite{ETSI5G}}
+%     \label{coordinate}
+% \end{figure}
+
+
+% \subsubsection{Local and global coordinate systems}
+% A scheme includes various BSs and UTs determines Global Coordinate System (GCS). Besides that, Local Coordinate System (LCS) is specific to an antenna array (BS or UT) and is used to define its far-field pattern and polarization.
+
+% \subsubsection{Transformation from a LCS to a GCS}
+% This process describes how the orientation of an antenna array (defined in its LCS) is aligning to the GCS. A 3D-rotation is defined by three angles: $\alpha$, $\beta$, $\gamma$. Firstly, $\alpha$ – bearing angle is the first rotation around the z axis, set antenna’s azimuth direction (eg. Direction of a BS antenna area). Secondly, $\beta$ – downtilt angle is the second rotation around y’ axis, put the tilt down angle of antenna. Finally, $\gamma$ – slant angle is the third rotation around x’’ axis, locate antenna’s slant angle.
+
+% \subsubsection{Transformation from an LCS to a GCS for downtilt angle only}
+% In this part, the paper will provide equations transform from LCS to GCS in simplified case, where the downtilt angle $\beta$ is non-zero, and both bearing angle $\alpha$ and slant angle $\gamma$ is zero. Supposal simplified case:
+
+% \begin{itemize}
+%     \item $\alpha = 0$
+%     \item $\gamma = 0$
+%     \item y' axis of LCS is parallel to y axis of GCS
+%     \item The mechanical angle is modeled like a rotation of LCS around y axis
+%     \item If the mechanical angle equal 0, LCS comport with GCS
+% \end{itemize}
+
+% \subsection{Scenarios}
+% \subsubsection{UMi - Street canyon}
+% In this scenario, the BS antenna height $\mathrm{h}_{BS}$ is 10m. This height is normally shorter than surrounding buildings, typical for producing micro-urban where the BSs are below the roof level. In addition, the UT mobility (measured in horizontal planes only) is 3km/h. This speed is the same as human walking speed. And the minimum distance between BS and UT in 2D space is 10m. 
+
+% \subsubsection{UMa}
+% In this scenario, the BS antenna height $\mathrm{h}_{BS}$ is 35m. This altitude is typically taller than roof level, allowing for wider coverage. Moreover, the UT mobility is the same as UMi scenario. Additionally, the minimum distance between BS and UT measured in 2D space is 35m.
+
+% \subsubsection{Indoor - office}
+% In this part, the parameters for scenarios “Open office” and “Mixed office” are introduced. Both of them have the same parameters. The BS antenna height $\mathrm{h}_{BS}$ is 3m which is on the ceiling. Setting up the antenna on the ceiling is a popular design, it helps optimize coverage and interference reduction in closed environments. Furthermore, the UT height $\mathrm{h}_{UT}$ is 1m. This is a typical height for a user terminal, such as when placed on a desk or held by a sitting user. And the UT mobility is the same as UMi – Street canyon scenario. The last one is the minimum distance between the BS and UT in 2D space is 0m. This parameter lets the UT stay very close to the BS, which is useful for testing short-distance communication.
+
+% Note that the LOS probability is the only difference between both scenarios
+
+% \subsubsection{RMa}
+% In RMa (Rural Macro) scenario, model rural or suburban environments need wide and continuous coverage. Also, this scenario requires supporting very fast cars. 
+
+% The first parameter we should focus on is BS antenna height $\mathrm{h}_{BS}$ which have the value of 35m. This height is commonly for BS macro TRP and set up above roof level of surrounding buildings to optimize wide coverage. Secondly, the UT height $\mathrm{h}_{UT}$ is 1.5m, which is basic height for users’ device when using normally. The last parameter is the minimum distance between the BS and UT in 2D space is 35m.
+
+% \setcounter{subsection}{4}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+% \subsection{Fast fading model formulas}
+
+% \vspace*{-1cm}
+% \begin{adjustwidth}{-2cm}{-1.5cm}
+% \begin{equation}\tag{7.5-22} \label{eq:7.5-22}
+% \begin{split}
+%     \mathrm{H}_{u,s,n}^{NLOS}(t)=\sqrt{\frac{\mathrm{P}_n}{M}}\sum_{m=1}^{M}\begin{bmatrix}
+%     \mathrm{F}_{rx,u,\theta}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA}) \\
+%     \mathrm{F}_{rx,u,\phi}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA})
+%     \end{bmatrix}^T 
+%     \begin{bmatrix}
+%     \exp(j\mathrm{\Phi}_{n,m}^{\theta\theta}) & \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\theta\phi}) \\
+%     \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\phi\theta}) & \exp(j\mathrm{\Phi}_{n,m}^{\phi\phi})
+%     \end{bmatrix}\\
+%     \begin{bmatrix}
+%     F_{tx,s,\theta}(\theta_{n,m,ZOD}, \phi_{n,m,AOD}) \\
+%     F_{tx,s,\phi}(\theta_{n,m,ZOD}, \phi_{n,m,AOD})
+%     \end{bmatrix}
+%     \exp(\frac{j2\pi(\hat{r}_{rx,n,m}^{T}.\overline{d}_{rx,u})}{\lambda_0})
+%     \exp(\frac{j2\pi(\hat{r}_{tx,n,m}^{T}.\overline{d}_{tx,s})}{\lambda_0})
+%     \exp(j2\pi\frac{\hat{r}_{rx,n,m}^T.\overline{v}}{\lambda_0}t)
+% \end{split}
+% \end{equation}
+% \end{adjustwidth}
+
+% %Fomula \eqref{eq:7.5-22} abcdewfwefh
+
+% \begin{adjustwidth}{-2cm}{-1.5cm}
+% \begin{equation}\tag{7.5-28} \label{eq:7.5-28}
+% \begin{split}
+%     \mathrm{H}_{u,s,n,m}^{NLOS}(t)=\sqrt{\frac{\mathrm{P}_n}{M}}\begin{bmatrix}
+%     \mathrm{F}_{rx,u,\theta}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA}) \\
+%     \mathrm{F}_{rx,u,\phi}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA})
+%     \end{bmatrix}^T 
+%     \begin{bmatrix}
+%     \exp(j\mathrm{\Phi}_{n,m}^{\theta\theta}) & \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\theta\phi}) \\
+%     \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\phi\theta}) & \exp(j\mathrm{\Phi}_{n,m}^{\phi\phi})
+%     \end{bmatrix}\\
+%     \begin{bmatrix}
+%     F_{tx,s,\theta}(\theta_{n,m,ZOD}, \phi_{n,m,AOD}) \\
+%     F_{tx,s,\phi}(\theta_{n,m,ZOD}, \phi_{n,m,AOD})
+%     \end{bmatrix}
+%     \exp(\frac{j2\pi(\hat{r}_{rx,n,m}^{T}.\overline{d}_{rx,u})}{\lambda_0})
+%     \exp(\frac{j2\pi(\hat{r}_{tx,n,m}^{T}.\overline{d}_{tx,s})}{\lambda_0})
+%     \exp(j2\pi\frac{\hat{r}_{rx,n,m}^T.\overline{v}}{\lambda_0}t)
+% \end{split}
+% \end{equation}
+% \end{adjustwidth}
+
+% \begin{adjustwidth}{-2cm}{-1.5cm}
+% \begin{equation}\tag{7.5-30} \label{eq:7.5-30}
+% \begin{split}
+%     H_{u,s}^{LOS}(\tau,t)=\sqrt{\frac{1}{K_R+1}}H_{u,s}^{NLOS}({\tau,t})+\sqrt{\frac{K_R}{K_R+1}}H_{u,s,1}^{LOS}(t)\delta(\tau-\tau_1)
+% \end{split}
+% \end{equation}
+% \end{adjustwidth}
+
+\setcounter{section}{1}
+\setcounter{figure}{0}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[height=10cm]{Images/figrue2.png}
+    \caption[The correlation properties in BS side]{\bfseries \fontsize{12pt}{0pt}\selectfont The correlation properties in BS side}
+    \label{figure2}
+\end{figure}
+
+The Figure \ref{figure2} shown the Transmitter Spatial Correlation Function at the BS side in 3 environments: UMi, RMa and Indoor. 
+
+In the UMi environment, the spatial correlation was the strongest. There are 4 amplitude peaks at around 18, 17, 17 and 16 where the $\Delta d_s$ is approximately 0, 0.015, 0.03 and 0.045. The amplitude almost drops to zero at $\Delta d_s$ is 0.007, 0.021, 0.036, 0.05
+
+The RMa environment shows smoother, less frequent oscillation with lower peak amplitudes compared to UMi. The maximum has 3 values, all of which are around 14; peaks located $\Delta d_s \approx$ 0, 0.021 and 0.043. And the minimum is approximately zero at $\Delta d_s \approx 0.01$ and $0.032$.
+
+In contrast, the Indoor environment displays the lowest correlation amplitudes and the fastest rate of decorrelation. The amplitude peaks is around 18, 17, 14, 10, 8 where the $\Delta d_s$ is approximately 0, 0.011, 0.022, 0.032 and 0.045. Besides that, the minima at $\Delta d_s \approx$ 0.005, 0.016, 0.027, 0.037 and 0.047.
+
+In conclusion, the Indoor environment is the most favorable due to its stable and controlled conditions. Unlike outdoor, it is not affected by weather factors such as sunlight, rain, \dots. As a result, signal transmission is more consistent and reliable.
+
+\clearpage
+
+% \section*{CHƯƠNG 2.  CƠ SỞ LÝ THUYẾT}
+% \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 2.  CƠ SỞ LÝ THUYẾT}
+% \setcounter{section}{2}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+
+
+% \subsection{Một số lưu ý khi trình bày đồ án}
+
+% Kể từ cuộc cách mạng thông tin 4.0, hệ thống 6G mang đến một tiềm năng to lớn trong việc phát tiển cơ sở hạ tầng cho truyền thông không dây \cite{Chataut2024}.
+
+% Ngày nay AI/ML đóng một vai trò vô cùng quan trọng trong hệ thống chăm sóc sức khỏe, cũng như lĩnh vực 6G \cite{Mahmood2022}. 
+
+% Trong công thức \eqref{ShannonEq}, $C$ là thông lượng tối đa của hệ thống,  $B$ là bề rộng của băng thông, $S$ là công suất của tín hiệu, và $N$ là công suất của nhiễu. 
+% %
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.8 \textwidth]{Images/DHBK.jpg}
+%     \caption{Khuôn viên C1 của Đại học Bách Khoa Hà Nội}
+%     \label{dhbkima}
+% \end{figure}
+
+% Hình \ref{dhbkima} là khuôn viên trước tòa nhà chính C1 của Đại học Bách Khoa Hà Nội. Nơi đây đã chứng kiến hàng trăm nghìn con người trưởng thành và góp phần quan trọng xậy dựng đất nước. 
+
+% Sau đây là một vài chú ý khi làm đồ án các bạn cần nhớ nhé:
+
+% Bây giờ thầy sẽ chỉ cho các bạn xem, cách lưu trữ, cách trích dẫn một cách khoa học và chuyên nghiệp. 
+
+% Cụ thể trong nghiên cứu \cite{Mahmood2022}, tác giả mahmood đã đưa ra tổng thể các giải pháp về AI/ML cho hệ thống IoT. Trong một bản survey khác \cite{Prashant2021}, tác giả Prashant đưa ra mô hình hệ thống băng thông siêu rộng, siêu tin cậy, đô trễ thấp ứng dụng ML/AI trong 6G. Ngoài ra tác giả Prashant trong \cite{Prashant2022} đề xuất phương pháp transfer learning cho hệ thống IoT tích hợp 6G. 
+
+% \subsubsection{Nộp đồ án}
+% Sinh viên (hoặc nhóm sinh viên tối đa 3 thành viên làm chung một đề tài) nộp 2 quyển đồ án tốt nghiệp tại văn phòng bộ môn của giảng viên hướng dẫn trước ngày bảo vệ ít nhất một tuần. Một quyển đồ án cần có các đặc điểm sau:
+% \begin{itemize}
+%     \item Được \textbf{in hai mặt} nhằm tiết kiệm không gian lưu trữ.
+%     \item Đóng bìa mềm, bên ngoài là bóng kính.
+%     \item Số trang: 50 - 150 trang, không kể phần phụ lục.
+%     \item Phải có chữ ký của sinh viên sau LỜI CAM ĐOAN và của giảng viên hướng dẫn.
+% \end{itemize}
+% \subsubsection{Phụ lục}
+% Phụ lục (nếu có) chứa các thông tin có liên quan đến đồ án nhưng nếu để ở trong phần chính sẽ gây rườm rà. Thông thường các chi tiết được để trong phần phụ lục là: kết quả thô (chưa qua xử lý), mã nguồn phần mềm, thông số kỹ thuật chi tiết của linh kiện, hình ảnh minh họa thêm,...vv.
+
+% \subsubsection{Tài liệu tham khảo}
+% \paragraph{Cách liệt kê}\mbox{}
+
+% Trong công thức \eqref{ShannonEq} đã thể hiện giới hạn trên của thông lượng. 
+
+% Tài liệu \cite{Ding2023} đã nghiên cứu về Brain. 
+
+% Áp dụng cách liệt kê theo quy định của IEEE. Theo đó, tài liệu tham khảo được đánh số thứ tự trong ngoặc vuông \cite{nguyen2018optimal}. Thứ tự liệt kê là thứ tự xuất hiện của tài liệu tham khảo được trích dẫn trong đồ án. Tài liệu tham khảo đã liệt kê bắt buộc phải được trích dẫn trong phần nội dung của đồ án. Tài liệu tham khảo cần có nguồn gốc rõ ràng và phải từ nguồn đáng tin cậy. Hạn chế trích dẫn tài liệu tham khảo từ các website, từ wikipedia.
+% \paragraph{Các loại tài liệu tham khảo}\mbox{}
+% Các nguồn tài liệu tham khảo chính là sách, bài báo trong các tạp chí, bài báo trong các hội nghị khoa học và các tài liệu tham khảo khác trên internet.
+
+% \subsubsection{Đánh số phương trình}
+% Phương trình được đánh số theo số của chương, như hình vẽ và bảng biểu.
+% \subsubsection{Đánh số định nghĩa, định lý, hệ quả}
+% Các định nghĩa, định lý, hệ quả sẽ được đánh số theo số của chương và được sử dụng chung một chỉ số. Ví dụ trong chương 3, các định nghĩa, định lý, hệ quả sẽ được đánh số theo thứ tự như sau: Định lý 3.1, Định nghĩa 3.2, Hệ quả 3.3, Định lý 3.4,..
+
+% \newpage
+% \section*{CHƯƠNG 3. THUẬT TOÁN}
+% \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 3. THUẬT TOÁN}
+% \setcounter{section}{3}
+% \setcounter{subsection}{0}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+% Đây là phần sinh viên tự phát triển như: xây dựng thuật toán, xây dựng chương trình, mô phỏng, tính toán, thiết kế, chạy thử kết quả.
+% \subsection{Cách chèn ảnh}
+% \begin{figure}[!ht]
+%     \centering
+%     \includegraphics[width=16cm,height=4.39cm]{Images/hinh31.png}
+%     \caption[Sơ đồ khối của hệ thống]{\bfseries \fontsize{12pt}{0pt}\selectfont Sơ đồ khối của hệ thống}
+%     \label{hinh31}
+% \end{figure}
+% Hình \ref{hinh31} là ví dụ về cách chèn ảnh. Lưu ý chú thích của hình vẽ được đặt ngay dưới hình vẽ. Tất cả các hình vẽ phải được đề cập đến trong phần nội dung và phải được phân tích và bình luận giống như mình đang làm thế này nhé :)
+
+% \subsection{Cách tạo bảng}
+% \begin{table}[H]
+%     \centering
+%     \caption[Kết quả thí nghiệm]{\bfseries\fontsize{12pt}{0pt}\selectfont Kết quả thí nghiệm}
+%     \begin{tabularx}{0.85\textwidth}{
+%     | >{\centering\arraybackslash}y
+%     | >{\centering\arraybackslash}a
+%     | >{\centering\arraybackslash}a
+%     | >{\centering\arraybackslash}y|
+%     }
+%     \hline
+%     \bfseries  Lần thí nghiệm   &\bfseries Điện áp đo được \hspace{1cm}(mV)   &\bfseries Điện áp tham chiếu \hspace{0pt} (mV)  & \bfseries Sai lệch\hspace{0pt}(\%)\\\hline
+%        1  &   &   &\\\hline
+%        2  &   &   &\\\hline
+%        3  &   &   &\\\hline
+%     ...  &   &   &\\\hline
+%     \end{tabularx}
+%     \label{bang31}
+% \end{table}
+% Bảng \ref{bang31} là ví dụ về cách tạo bảng. Lưu ý chú thích của bảng được đặt ở trước bảng. Tất cả các bảng biểu phải được đề cập đến trong phần nội dung và phải được phân tích và bình luận giống như mình đang làm nhé :).
+
+% \begin{table}[ht]
+% \centering
+% \caption{A table without vertical lines.}
+% \begin{tabular}[t]{l|c|c}
+% \toprule
+% &Treatment A&Treatment B\\
+% \midrule
+% John Smith&1&2\\
+% \midrule
+% Jane Doe&--&3\\
+% \midrule
+% Mary Johnson&4&5\\
+% \bottomrule
+% \end{tabular}
+% \end{table}%
+
+% \subsection{Cách viết phương trình}
+% \begin{equation}\label{pt31}
+%     F(x) = \int^a_b \frac{1}{3}x^3
+% \end{equation}
+% Phương trình \ref{pt31} là ví dụ về phương trình tích phân. Từ phương trình \eqref{pt33} chúng ta tính được $y(t)$ như sau:
+% %
+% \begin{equation}\label{pt33}
+%     \int_{0}^{T}x(t)\times \delta t
+% \end{equation}
+
+% Thử phương trình khác nhé :)
+% \begin{equation}\label{pt32}
+%     x[t_n] = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1}X[f_k]e^{j 2\pi n k/N}
+% \end{equation}
+% Phương trình \ref{pt32} thể hiện phép biến đổi Fourier rời rạc ngược (IDFT).
+
+% \subsection{Cách viết định nghĩa, định lý, hệ quả, bổ đề,...}
+% Định lý lấy mẫu Nyquist-Shannon là một định lý được sử dụng trong lĩnh vực lý thuyết thông tin, đặc biệt là trong viễn thông và xử lý tín hiệu.
+% \begin{theorem}\label{đlNq} % Định lý
+% Một hàm số tín hiệu $x(t_n)$ không chứa bất kỳ thành phần tần số nào lớn hơn hoặc bằng một giá trị $f_m$ có thể biểu diễn chính xác bằng tập các giá trị của nó với chu kỳ lấy mẫu $T=1/(2f_m)$.
+% \end{theorem}
+% Định lý \ref{đlNq} thường được gọi đơn giản là định lý lấy mẫu.
+% \begin{corollary}\label{coro1}
+% this is something here about corollary.
+% \end{corollary}
+% Hệ quả \ref{coro1} gì đó ....
+% \begin{lemma}\label{lemma1}
+% đây là nội dung bổ đề.
+% \end{lemma}
+% Bổ đề \ref{lemma1} ....
+% \begin{defn}\label{defn1}
+% Nội dung định nghĩa...
+% \end{defn}
+% Định nghĩa \ref{defn1} nói về...
+% \newpage
+% \section*{CHƯƠNG 4. THÍ NGHIỆM VÀ KẾT QUẢ THÌ THẤY LÀ NẾU VIẾT HAI DÒNG SẼ BỊ XẤU}
+% \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 4. THÍ NGHIỆM VÀ KẾT QUẢ}
+% \setcounter{section}{4}
+% \setcounter{figure}{0}
+% \setcounter{table}{0}
+% \lipsum
+% \begin{figure}[!ht]
+%     \centering
+%     \includegraphics[width=16cm,height=6cm]{Images/5g.jpg}
+%     \caption[Mạng 5G]{\bfseries \fontsize{12pt}{0pt}\selectfont Mạng di động thế hệ thứ 5}
+%     \label{hinh41}
+% \end{figure}
+
+% Hình \ref{hinh41} là ví dụ về cách chèn ảnh. Lưu ý chú thích của hình vẽ được đặt ngay dưới hình vẽ. Tất cả các hình vẽ phải được đề cập đến trong phần nội dung và phải được phân tích và bình luận giống như mình đang làm thế này nhé :)
+% \newpage
+% \section*{KẾT LUẬN}
+% \phantomsection\addcontentsline{toc}{section}{\numberline {}KẾT LUẬN}
+% \subsection*{Kết luận chung}
+% \phantomsection\addcontentsline{toc}{section}{\numberline {}Kết luận chung}
+% Kết luận chung cho các chương trong đồ án. Mục này cần nhấn mạnh những vấn đề đã giải quyết và vấn đề chưa giải quyết để đưa ra các đánh giá về mức độ hoàn thành công việc. Đánh giá này thường bao gồm việc so sánh kết quả thu được với mục tiêu đề ra ban đầu.
+
+% Thêm một reference trước Li thì thế nào \cite{Yang2020}.
+
+% Ở đây chúng ta sẽ tập trích dẫn đến tài liệu tham khảo của Li \cite{Li2018}.
+
+% Bắt đầu với công thức toán số \eqref{congthuctinhtong} như sau:
+
+% \begin{equation}\label{congthuctinhtong}
+%     \sum_{i=1}^N x_i(t) = \Delta.
+% \end{equation}
+
+% \subsection*{Hướng phát triển}
+% \phantomsection\addcontentsline{toc}{section}{\numberline {}Hướng phát triển}
+% (Nếu có)
+% \subsection*{Kiến nghị và đề xuất}
+% \phantomsection\addcontentsline{toc}{section}{\numberline {}Kiến nghị và đề xuất}
+% (Nếu có)
+% \newpage
+% \phantomsection\addcontentsline{toc}{section}{\numberline {}REFERENCES}
+% \bibliographystyle{IEEEtran}
+% \bibliography{MyRef}
+% \newpage
+% \input{PhuLuc} % Phụ lục nếu có
+\end{document}
+
