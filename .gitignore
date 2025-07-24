@@ -1,4 +1,5 @@
 *.pdf
+!Figure 7.1.1.pdf
 *.aux
 *.lof
 *.log
