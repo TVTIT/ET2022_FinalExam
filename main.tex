@@ -104,131 +104,81 @@
 % \phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC BẢNG BIỂU}
 % \newpage
 
-%\input{Abstract} % Tóm tắt đồ án 
+\input{Abstract} % Tóm tắt đồ án 
 
-% \pagenumbering{arabic} % Đánh số thứ tự 1,2,3...
-% \section*{SECTION 7. CHANNEL MODEL(S) FOR 0.5 - 100 GHZ}
-% \addcontentsline{toc}{section}{\numberline{}7   Channel model(s) for 0.5 - 100 GHz}
-% \setcounter{section}{7}
-% \setcounter{figure}{0}
-% \setcounter{table}{0}
+\pagenumbering{arabic} % Đánh số thứ tự 1,2,3...
 
-% \subsection{Coordinate system}
-% \subsubsection{Definition}
-% The Cartesian coordinate system is used, where x, y, z axes; angles; unit vectors are shown in figure \ref{coordinate} below. Also, figure \ref{coordinate} characterizes the zenith angle $\theta$ and the azimuth angle $\phi$. The zenith angle $\theta$ is measured from the positive z-axis ($0^\circ$ points to zenith, $90^\circ$ points to horizon) and the azimuth angle $\phi$ is measured from positive x-axis in the (Oxy) plane. Moreover, spherical unit vectors define field components.
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.8\textwidth, clip, trim=5 5 5 5]{Firgue 7.1.1.pdf}
-%     %\caption{Definition of spherical angles and spherical unit vectors in a Cartesian oordinate system, where $\hat{n}$ is the given direction, $\hat{\theta}$ and  $\hat{\phi}$ are the spherical basis vectors}
-%     \caption{Definition of Cartesian coordinate system~\cite{ETSI5G}}
-%     \label{coordinate}
-% \end{figure}
-
-
-% \subsubsection{Local and global coordinate systems}
-% A scheme includes various BSs and UTs determines Global Coordinate System (GCS). Besides that, Local Coordinate System (LCS) is specific to an antenna array (BS or UT) and is used to define its far-field pattern and polarization.
-
-% \subsubsection{Transformation from a LCS to a GCS}
-% This process describes how the orientation of an antenna array (defined in its LCS) is aligning to the GCS. A 3D-rotation is defined by three angles: $\alpha$, $\beta$, $\gamma$. Firstly, $\alpha$ – bearing angle is the first rotation around the z axis, set antenna’s azimuth direction (eg. Direction of a BS antenna area). Secondly, $\beta$ – downtilt angle is the second rotation around y’ axis, put the tilt down angle of antenna. Finally, $\gamma$ – slant angle is the third rotation around x’’ axis, locate antenna’s slant angle.
-
-% \subsubsection{Transformation from an LCS to a GCS for downtilt angle only}
-% In this part, the paper will provide equations transform from LCS to GCS in simplified case, where the downtilt angle $\beta$ is non-zero, and both bearing angle $\alpha$ and slant angle $\gamma$ is zero. Supposal simplified case:
-
-% \begin{itemize}
-%     \item $\alpha = 0$
-%     \item $\gamma = 0$
-%     \item y' axis of LCS is parallel to y axis of GCS
-%     \item The mechanical angle is modeled like a rotation of LCS around y axis
-%     \item If the mechanical angle equal 0, LCS comport with GCS
-% \end{itemize}
-
-% \subsection{Scenarios}
-% \subsubsection{UMi - Street canyon}
-% In this scenario, the BS antenna height $\mathrm{h}_{BS}$ is 10m. This height is normally shorter than surrounding buildings, typical for producing micro-urban where the BSs are below the roof level. In addition, the UT mobility (measured in horizontal planes only) is 3km/h. This speed is the same as human walking speed. And the minimum distance between BS and UT in 2D space is 10m. 
-
-% \subsubsection{UMa}
-% In this scenario, the BS antenna height $\mathrm{h}_{BS}$ is 35m. This altitude is typically taller than roof level, allowing for wider coverage. Moreover, the UT mobility is the same as UMi scenario. Additionally, the minimum distance between BS and UT measured in 2D space is 35m.
-
-% \subsubsection{Indoor - office}
-% In this part, the parameters for scenarios “Open office” and “Mixed office” are introduced. Both of them have the same parameters. The BS antenna height $\mathrm{h}_{BS}$ is 3m which is on the ceiling. Setting up the antenna on the ceiling is a popular design, it helps optimize coverage and interference reduction in closed environments. Furthermore, the UT height $\mathrm{h}_{UT}$ is 1m. This is a typical height for a user terminal, such as when placed on a desk or held by a sitting user. And the UT mobility is the same as UMi – Street canyon scenario. The last one is the minimum distance between the BS and UT in 2D space is 0m. This parameter lets the UT stay very close to the BS, which is useful for testing short-distance communication.
-
-% Note that the LOS probability is the only difference between both scenarios
-
-% \subsubsection{RMa}
-% In RMa (Rural Macro) scenario, model rural or suburban environments need wide and continuous coverage. Also, this scenario requires supporting very fast cars. 
-
-% The first parameter we should focus on is BS antenna height $\mathrm{h}_{BS}$ which have the value of 35m. This height is commonly for BS macro TRP and set up above roof level of surrounding buildings to optimize wide coverage. Secondly, the UT height $\mathrm{h}_{UT}$ is 1.5m, which is basic height for users’ device when using normally. The last parameter is the minimum distance between the BS and UT in 2D space is 35m.
-
-% \setcounter{subsection}{4}
-% \setcounter{figure}{0}
-% \setcounter{table}{0}
-% \subsection{Fast fading model formulas}
-
-% \vspace*{-1cm}
-% \begin{adjustwidth}{-2cm}{-1.5cm}
-% \begin{equation}\tag{7.5-22} \label{eq:7.5-22}
-% \begin{split}
-%     \mathrm{H}_{u,s,n}^{NLOS}(t)=\sqrt{\frac{\mathrm{P}_n}{M}}\sum_{m=1}^{M}\begin{bmatrix}
-%     \mathrm{F}_{rx,u,\theta}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA}) \\
-%     \mathrm{F}_{rx,u,\phi}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA})
-%     \end{bmatrix}^T 
-%     \begin{bmatrix}
-%     \exp(j\mathrm{\Phi}_{n,m}^{\theta\theta}) & \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\theta\phi}) \\
-%     \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\phi\theta}) & \exp(j\mathrm{\Phi}_{n,m}^{\phi\phi})
-%     \end{bmatrix}\\
-%     \begin{bmatrix}
-%     F_{tx,s,\theta}(\theta_{n,m,ZOD}, \phi_{n,m,AOD}) \\
-%     F_{tx,s,\phi}(\theta_{n,m,ZOD}, \phi_{n,m,AOD})
-%     \end{bmatrix}
-%     \exp(\frac{j2\pi(\hat{r}_{rx,n,m}^{T}.\overline{d}_{rx,u})}{\lambda_0})
-%     \exp(\frac{j2\pi(\hat{r}_{tx,n,m}^{T}.\overline{d}_{tx,s})}{\lambda_0})
-%     \exp(j2\pi\frac{\hat{r}_{rx,n,m}^T.\overline{v}}{\lambda_0}t)
-% \end{split}
-% \end{equation}
-% \end{adjustwidth}
-
-% %Fomula \eqref{eq:7.5-22} abcdewfwefh
-
-% \begin{adjustwidth}{-2cm}{-1.5cm}
-% \begin{equation}\tag{7.5-28} \label{eq:7.5-28}
-% \begin{split}
-%     \mathrm{H}_{u,s,n,m}^{NLOS}(t)=\sqrt{\frac{\mathrm{P}_n}{M}}\begin{bmatrix}
-%     \mathrm{F}_{rx,u,\theta}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA}) \\
-%     \mathrm{F}_{rx,u,\phi}(\mathrm{\theta}_{n,m,ZOA}, \mathrm{\phi}_{n,m,AOA})
-%     \end{bmatrix}^T 
-%     \begin{bmatrix}
-%     \exp(j\mathrm{\Phi}_{n,m}^{\theta\theta}) & \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\theta\phi}) \\
-%     \sqrt{\kappa_{n,m}^{-1}}\exp(j\Phi_{n,m}^{\phi\theta}) & \exp(j\mathrm{\Phi}_{n,m}^{\phi\phi})
-%     \end{bmatrix}\\
-%     \begin{bmatrix}
-%     F_{tx,s,\theta}(\theta_{n,m,ZOD}, \phi_{n,m,AOD}) \\
-%     F_{tx,s,\phi}(\theta_{n,m,ZOD}, \phi_{n,m,AOD})
-%     \end{bmatrix}
-%     \exp(\frac{j2\pi(\hat{r}_{rx,n,m}^{T}.\overline{d}_{rx,u})}{\lambda_0})
-%     \exp(\frac{j2\pi(\hat{r}_{tx,n,m}^{T}.\overline{d}_{tx,s})}{\lambda_0})
-%     \exp(j2\pi\frac{\hat{r}_{rx,n,m}^T.\overline{v}}{\lambda_0}t)
-% \end{split}
-% \end{equation}
-% \end{adjustwidth}
-
-% \begin{adjustwidth}{-2cm}{-1.5cm}
-% \begin{equation}\tag{7.5-30} \label{eq:7.5-30}
-% \begin{split}
-%     H_{u,s}^{LOS}(\tau,t)=\sqrt{\frac{1}{K_R+1}}H_{u,s}^{NLOS}({\tau,t})+\sqrt{\frac{K_R}{K_R+1}}H_{u,s,1}^{LOS}(t)\delta(\tau-\tau_1)
-% \end{split}
-% \end{equation}
-% \end{adjustwidth}
-
+\section*{CHAPTER 1. THEORY}
+\addcontentsline{toc}{section}{\numberline{}CHAPTER 1. THEORY}
 \setcounter{section}{1}
 \setcounter{figure}{0}
+\setcounter{table}{0}
+\subsection{Definition of coordinate system in channel model(s)}
+The Cartesian coordinate system is used, where $x, y, z$ axes; angles; unit vectors are shown in figure \ref{coordinate}. The coordinate system includes two angles: the zenith angle $\theta$ and the azimuth angle $\phi$. The zenith angle $\theta$ is measured from the positive z-axis ($0^\circ$ points to zenith, $90^\circ$ points to horizon) and the azimuth angle $\phi$ is measured from positive x-axis in the (Oxy) plane.
+
+Beyone the angles, the spherical unit vectors are also defined in the coordinate system which combine three vectors: $\hat{n}$,  $\hat{\theta}$ and $\hat{\phi}$. Firstly, The vector $\hat{n}$ is described as "given direction vector", it typically represents the direction of propagation. Secondly, the vector $\hat{\theta}$ is identified as a spherical basis vector and represents the direction of the field component associated with the zenith angle ($\theta$). The last one is the vector $\hat{\phi}$ also designated as a spherical basis vector which indicates the direction of the field component associated with the azimuth angle.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth, clip, trim=5 5 5 5]{Figure 7.1.1.pdf}
+    \caption[Definition of Cartesian coordinate system~\cite{ETSI5G}]{\bfseries \fontsize{12pt}{0pt}\selectfont Definition of Cartesian coordinate system~\cite{ETSI5G}}
+    \label{coordinate}
+\end{figure}
+
+\subsection{Spatial correlation function}
+
+The spatial - temporal correlation function of $2 \times 2$ antenna system is calculated by the time average operator as \cite{final_exam}:
+
+\begin{adjustwidth}{-2cm}{0cm}
+\begin{equation} \label{ptTQ}
+\begin{split}
+    \rho(\Delta d_S, \Delta d_u, \Delta t, \Delta f = 0)=\left\langle H_{u_1, s_1}(f,t) \times H_{u_2, s_2}^* (f,t+\Delta t) \right\rangle = \\
+    \sum_{n=1}^{N}\sqrt{\frac{P_n}{M}}\sum_{n=1}^M
+    \Bigg(
+    \exp \Big( \frac{j2\pi(\hat{r}_{rx,n,m}^T \times \Delta \overline d_{rx,u}}{\lambda_0} \Big) \\
+    \times \exp \Big( \frac{j2\pi(\hat{r}_{rx,n,m}^T \times \Delta \overline d_{tx,s})}{\lambda_0} \Big) \\
+    \times \exp \Big( \frac{j2\pi(\hat{r}_{rx,n,m}^T \times \overline{v})}{\lambda_0} \Big)\Delta t
+    \Bigg)
+\end{split}
+\end{equation}
+\end{adjustwidth}
+
+Set $\Delta t = \Delta f = 0$ and $\Delta d_u = 0$, the cross spatial correlation function of the channel at the transmitter is presented as \cite{final_exam}: 
+\begin{adjustwidth}{-2cm}{0cm}
+\begin{equation} \label{ptBS} 
+\begin{split}
+    \rho(\Delta d_s = \Delta \overline d_{tx,s}) = \sum_{n=1}^N \sqrt{\frac{P_n}{M}} \sum_{m=1}^M \exp \Big(\frac{j2\pi(\hat{r}_{tx,n,m}^T \times \Delta \overline{d}_{tx,s})}{\lambda_0} \Big)
+\end{split}
+\end{equation}
+\end{adjustwidth}
+
+The cross spatial correlation function at the receiver when $\Delta t = \Delta f = 0$and $\Delta d_s = 0$ is as follow \cite{final_exam}:
+\begin{adjustwidth}{-2cm}{0cm}
+\begin{equation} \label{ptMS}
+\begin{split}
+    \rho(\Delta d_s = \Delta \overline d_{tx,s}) = \sum_{n=1}^N \sqrt{\frac{P_n}{M}} \sum_{m=1}^M \exp \Big(\frac{j2\pi(\hat{r}_{tx,n,m}^T \times \Delta \overline{d}_{tx,s})}{\lambda_0} \Big)
+\end{split}
+\end{equation}
+\end{adjustwidth}
+
+\section*{CHAPTER 2. SIMULATION}
+\setcounter{section}{2}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{subsection}{0}
+\addcontentsline{toc}{section}{\numberline{}CHAPTER 2. SIMULATION}
+
+\subsection{BS Side}
+%\subsubsection{Definition}
+
 \begin{figure}[!ht]
     \centering
     \includegraphics[height=10cm]{Images/figrue2.png}
-    \caption[The correlation properties in BS side]{\bfseries \fontsize{12pt}{0pt}\selectfont The correlation properties in BS side}
+    \caption[The correlation properties in BS side~\cite{final_exam}]{\bfseries \fontsize{12pt}{0pt}\selectfont The correlation properties in BS side~\cite{final_exam}}
     \label{figure2}
 \end{figure}
 
+%Sửa lại theo cô chữa lưu ở laptop
 The Figure \ref{figure2} shown the Transmitter Spatial Correlation Function at the BS side in 3 environments: UMi, RMa and Indoor. 
 
 In the UMi environment, the spatial correlation was the strongest. There are 4 amplitude peaks at around 18, 17, 17 and 16 where the $\Delta d_s$ is approximately 0, 0.015, 0.03 and 0.045. The amplitude almost drops to zero at $\Delta d_s$ is 0.007, 0.021, 0.036, 0.05
@@ -238,6 +188,12 @@ The RMa environment shows smoother, less frequent oscillation with lower peak am
 In contrast, the Indoor environment displays the lowest correlation amplitudes and the fastest rate of decorrelation. The amplitude peaks is around 18, 17, 14, 10, 8 where the $\Delta d_s$ is approximately 0, 0.011, 0.022, 0.032 and 0.045. Besides that, the minima at $\Delta d_s \approx$ 0.005, 0.016, 0.027, 0.037 and 0.047.
 
 In conclusion, the Indoor environment is the most favorable due to its stable and controlled conditions. Unlike outdoor, it is not affected by weather factors such as sunlight, rain, \dots. As a result, signal transmission is more consistent and reliable.
+
+\clearpage
+
+\section*{CHAPTER 3. CONCLUSION}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}CHAPTER 3. CONCLUSION}
+With fifth generation (5G) network, there are many channel models have been proposed to accurately characterize spatial correlation and propagation behavior under various environmental conditions. However, most research is still based on traditional measurement, and sometime these analyses don’t have enough data to simulate. In this paper, I used simulation-based method to inspect spatial correlation in BS and MS side. I  analyzed the spatial correlation in three environments: UMi, RMa and Indoor. The results showed that while UMi and RMa environments exhibited strong but unstable oscillations, the Indoor environment provided the most consistent and predictable signal behavior. My study suggests that indoor can be benefited from greater stability, particularly in systems requiring low interference and controlled propagation.  Moreover, my results showed that the spatial correlation significantly impacts on at both the transmitter and receiver sides. The correlation at BS side is more stable than MS side.  Furthermore, this solution method could be applied to help optimize antenna design and placement strategies for indoor wireless communication systems.
 
 \clearpage
 
@@ -425,9 +381,9 @@ In conclusion, the Indoor environment is the most favorable due to its stable an
 % \phantomsection\addcontentsline{toc}{section}{\numberline {}Kiến nghị và đề xuất}
 % (Nếu có)
 % \newpage
-% \phantomsection\addcontentsline{toc}{section}{\numberline {}REFERENCES}
-% \bibliographystyle{IEEEtran}
-% \bibliography{MyRef}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}REFERENCES}
+\bibliographystyle{IEEEtran}
+\bibliography{MyRef}
 % \newpage
 % \input{PhuLuc} % Phụ lục nếu có
 \end{document}

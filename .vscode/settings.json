@@ -22,8 +22,8 @@
   "latex-workshop.latex.recipes": [
     {
       "name": "pdflatex",
-      //"tools": ["pdflatex","bibtex","pdflatex"]
-      "tools": ["pdflatex",]
+      "tools": ["pdflatex","bibtex","pdflatex"]
+      //"tools": ["pdflatex"]
     }
   ]
 }
