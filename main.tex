@@ -161,8 +161,6 @@ The cross spatial correlation function at the receiver when $\Delta t = \Delta f
 \end{equation}
 \end{adjustwidth}
 
-\clearpage
-
 \section*{CHAPTER 2. SIMULATION}
 \setcounter{section}{2}
 \setcounter{figure}{0}
@@ -173,30 +171,23 @@ The cross spatial correlation function at the receiver when $\Delta t = \Delta f
 \subsection{BS Side}
 %\subsubsection{Definition}
 
-%Sửa lại theo cô chữa lưu ở laptop
-The Figure \ref{figure2} showed the spatial correlation function at the Base Station (BS) side in three environments: Urban Micro (UMi), Rural Macro (RMa) and Indoor. 
-
 \begin{figure}[!ht]
     \centering
-    \includegraphics[height=8cm]{Images/figure2.png}
+    \includegraphics[height=10cm]{Images/figrue2.png}
     \caption[The correlation properties in BS side~\cite{final_exam}]{\bfseries \fontsize{12pt}{0pt}\selectfont The correlation properties in BS side~\cite{final_exam}}
     \label{figure2}
 \end{figure}
 
-There are several points where the amplitude reaches a high value, showing strong spatial correlation between antenna signals. In the UMi environment, there are four amplitude peaks at approximately 18, 17.8, 17 and 18 where the $\Delta d_s$ is around 0, 0.015, 0.03 and 0.045. Three maximum points are almost unchanged, all of which are close to 14 where the $\Delta d_s$ is nearly 0, 0.021 and 0.043. The Indoor environment has the most peaks, with five values approximately 18, 17, 14, 10 and 8, corresponding to the $\Delta d_s$ is around 0, 0.011, 0.022, 0.032 and 0.045. When increasing the wavelength $\lambda$, or in other words, decreasing the frequency, the Indoor environment’s amplitude decreases enormously compared to the UMi and RMa environments. Considering the peaks, I determined that the Indoor scenario is the optimal choice because when decreasing the frequency, the spatial correlation amplitude is substantially reduced.
+%Sửa lại theo cô chữa lưu ở laptop
+The Figure \ref{figure2} shown the Transmitter Spatial Correlation Function at the BS side in 3 environments: UMi, RMa and Indoor. 
 
-In contrast, multiple low amplitude points occur, showing how spatial correlation decreases in each environment. The UMi environment has three minimum values which occur at $\Delta d_s$ approximately 0.008, 0.022 and 0.036. In the RMa environment, there are two lowest points located at $\Delta d_s$ around 0.01 and 0.033. The last environment is Indoor where the amplitude almost drops to zero at $\Delta d_s \approx$ 0.005, 0.017, 0.028, 0.038 and 0.047. The Indoor is the earliest environment reaches its first minimum value, followed by the UMi environment, and lastly the RMa environment. I recommend the Indoor environment due to having the most minimum points.
+In the UMi environment, the spatial correlation was the strongest. There are 4 amplitude peaks at around 18, 17, 17 and 16 where the $\Delta d_s$ is approximately 0, 0.015, 0.03 and 0.045. The amplitude almost drops to zero at $\Delta d_s$ is 0.007, 0.021, 0.036, 0.05
 
-In conclusion, the Indoor environment is the most favorable because of its stable and conditions. Unlike outdoors, it is not affected by weather factors such as sunlight, rain, \dots, as a result, signal transmission is more consistent and dependable.
+The RMa environment shows smoother, less frequent oscillation with lower peak amplitudes compared to UMi. The maximum has 3 values, all of which are around 14; peaks located $\Delta d_s \approx$ 0, 0.021 and 0.043. And the minimum is approximately zero at $\Delta d_s \approx 0.01$ and $0.032$.
 
-\subsection{MS side}
+In contrast, the Indoor environment displays the lowest correlation amplitudes and the fastest rate of decorrelation. The amplitude peaks is around 18, 17, 14, 10, 8 where the $\Delta d_s$ is approximately 0, 0.011, 0.022, 0.032 and 0.045. Besides that, the minima at $\Delta d_s \approx$ 0.005, 0.016, 0.027, 0.037 and 0.047.
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[height=8cm]{Images/figure3.png}
-    \caption[The correlation properties in MS side~\cite{final_exam}]{\bfseries \fontsize{12pt}{0pt}\selectfont The correlation properties in MS side~\cite{final_exam}}
-    \label{figure2}
-\end{figure}
+In conclusion, the Indoor environment is the most favorable due to its stable and controlled conditions. Unlike outdoor, it is not affected by weather factors such as sunlight, rain, \dots. As a result, signal transmission is more consistent and reliable.
 
 \clearpage
 
