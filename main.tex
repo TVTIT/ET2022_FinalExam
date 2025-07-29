@@ -116,7 +116,7 @@
 \subsection{Definition of coordinate system in channel model(s)}
 The Cartesian coordinate system is used, where $x, y, z$ axes; angles; unit vectors are shown in figure \ref{coordinate}. The coordinate system includes two angles: the zenith angle $\theta$ and the azimuth angle $\phi$. The zenith angle $\theta$ is measured from the positive z-axis ($0^\circ$ points to zenith, $90^\circ$ points to horizon) and the azimuth angle $\phi$ is measured from positive x-axis in the (Oxy) plane.
 
-Beyone the angles, the spherical unit vectors are also defined in the coordinate system which combine three vectors: $\hat{n}$,  $\hat{\theta}$ and $\hat{\phi}$. Firstly, The vector $\hat{n}$ is described as "given direction vector", it typically represents the direction of propagation. Secondly, the vector $\hat{\theta}$ is identified as a spherical basis vector and represents the direction of the field component associated with the zenith angle ($\theta$). The last one is the vector $\hat{\phi}$ also designated as a spherical basis vector which indicates the direction of the field component associated with the azimuth angle.
+Beyone the angles, the spherical unit vectors are also defined in the coordinate system which combine three vectors: $\hat{n}$, $\hat{\theta}$ and $\hat{\phi}$. Firstly, The vector $\hat{n}$ is described as "given direction vector", it typically represents the direction of propagation. Secondly, the vector $\hat{\theta}$ is identified as a spherical basis vector and represents the direction of the field component associated with the zenith angle ($\theta$). The last one is the vector $\hat{\phi}$ also designated as a spherical basis vector which indicates the direction of the field component associated with the azimuth angle.
 
 \begin{figure}[htbp]
     \centering
@@ -161,6 +161,8 @@ The cross spatial correlation function at the receiver when $\Delta t = \Delta f
 \end{equation}
 \end{adjustwidth}
 
+In the next chapter, I will analyze the cross spatial correlation function at both transmitter and receiver sides. Moreover, at each side, I will inspect the spatial correlation in three environments: Urban Micro, Rural Macro and Indoor.
+
 \clearpage
 
 \section*{CHAPTER 2. SIMULATION}
@@ -174,7 +176,7 @@ The cross spatial correlation function at the receiver when $\Delta t = \Delta f
 %\subsubsection{Definition}
 
 %Sửa lại theo cô chữa lưu ở laptop
-The Figure \ref{figure2} showed the spatial correlation function at the Base Station (BS) side in three environments: Urban Micro (UMi), Rural Macro (RMa) and Indoor. 
+The Figure \ref{figure2} showed the spatial correlation function at the Base Station (BS) side in three environments: Urban Micro (UMi), Rural Macro (RMa) and Indoor. The curves have a sine-like shape, but their amplitude changes over time.
 
 \begin{figure}[!ht]
     \centering
@@ -187,9 +189,11 @@ There are several points where the amplitude reaches a high value, showing stron
 
 In contrast, low amplitude values appear at several positions, reflecting weaker correlation depending on the environment. The UMi environment has three minimum values which occur at $\Delta d_s$ approximately 0.008, 0.022 and 0.036. In the RMa environment, there are two lowest points located at $\Delta d_s$ around 0.01 and 0.033. The last environment is Indoor where the amplitude almost drops to zero at $\Delta d_s \approx$ 0.005, 0.017, 0.028, 0.038 and 0.047. The Indoor is the earliest environment reaches its first minimum value, followed by the UMi environment, and lastly the RMa environment. I recommend the Indoor environment due to having the most minimum points.
 
-In conclusion, the Indoor environment is the most favorable because of its stable and conditions. Unlike outdoors, it is not affected by weather factors such as sunlight, rain, \dots, as a result, signal transmission is more consistent and dependable.
+% In conclusion, the Indoor environment is the most favorable because of its stable and conditions. Unlike outdoors, it is not affected by weather factors such as sunlight, rain, \dots, as a result, signal transmission is more consistent and dependable.
+In conclusion, the Indoor environment is the most favorable in BS side because the more we decrease the frequency, the more influence is reduced. In addition, this environment is the first to hit an amplitude value equal zero.
 
 \subsection{MS side}
+The receiver spatial correlation function is illustrated in Figure \ref{figure3}. This graph gives information at the MS side in three environments same as the BS side. The curves show a sine wave pattern with decreasing peak values.
 
 \begin{figure}[!ht]
     \centering
@@ -198,11 +202,18 @@ In conclusion, the Indoor environment is the most favorable because of its stabl
     \label{figure3}
 \end{figure}
 
+On the MS side, the maximum correlation values gradually decrease with decreasing frequency. In the UMi environment, there are three peaks at approximately 19, 12 and 7 where the $\Delta d_s$ is around 0, 0.019, 0.037. Three maximum points in the RMa environment have the values close to 14, 13 and 11 where the $\Delta d_s \approx$ 0, 0.017, 0.037. The Indoor environment has the most peaks, with five values nearly 17, 13, 7, 6 and 4, corresponding to the $\Delta d_s$ is around 0, 0.012, 0.023, 0.033 and 0.044. When increasing the wavelength $\lambda$, the UMi and Indoor demonstrate superiority over the RMa environment. However, the Indoor is more optimal than UMi because when decreasing frequency, the Indoor’s maximum amplitude values are lower than those in the UMi environment.
+
+In the UMi environment, there are three points that the amplitude almost drops to zero, with $\Delta d_s$ approximately 0.011, 0.03 and 0.046. The RMa environment also has three lowest points, where the $\Delta d_s$ is around 0.01, 0.028 and 0.047. The last environment is Indoor, it has five minimum points occurring at $\Delta d_s \approx$ 0.006, 0.018, 0.028, 0.038 and 0.049. The Indoor environment is the first to reach its minimum value, the second one is UMi, and the last one is RMa. In terms of the minimum point, I prefer the Indoor environment because this environment has the most minimum points.
+
+In summary, the Indoor environment is the most efficient in the MS side due to its stable and conditions. Unlike outdoors, it is not affected by weather factors such as sunlight, rain, \dots, as a result, signal transmission is more consistent and dependable. Besides that, the user terminal speed indoors is typically lower than outdoors, especially on the road.
+
 \clearpage
 
+%sửa lại phần kết luận cho BS, MS là BS dễ dàng bị ảnh hưởng bởi tương quan còn MS ổn định hơn vì vẫn tuân theo phân bố giảm dần
 \section*{CHAPTER 3. CONCLUSION}
 \phantomsection\addcontentsline{toc}{section}{\numberline {}CHAPTER 3. CONCLUSION}
-With fifth generation (5G) network, there are many channel models have been proposed to accurately characterize spatial correlation and propagation behavior under various environmental conditions. However, most research is still based on traditional measurement, and sometime these analyses don’t have enough data to simulate. In this paper, I used simulation-based method to inspect spatial correlation in BS and MS side. I  analyzed the spatial correlation in three environments: UMi, RMa and Indoor. The results showed that while UMi and RMa environments exhibited strong but unstable oscillations, the Indoor environment provided the most consistent and predictable signal behavior. My study suggests that indoor can be benefited from greater stability, particularly in systems requiring low interference and controlled propagation.  Moreover, my results showed that the spatial correlation significantly impacts on at both the transmitter and receiver sides. The correlation at BS side is more stable than MS side.  Furthermore, this solution method could be applied to help optimize antenna design and placement strategies for indoor wireless communication systems.
+With fifth generation (5G) network, there are many channel models have been proposed to accurately characterize spatial correlation and propagation behavior under various environmental conditions. However, most research is still based on traditional measurement, and sometime these analyzes don’t have enough data to simulate. In this paper, I used simulation-based method to inspect spatial correlation in BS and MS side. I analyzed the spatial correlation in three environments: UMi, RMa and Indoor. The results showed that while UMi and RMa environments exhibited strong but unstable oscillations, the Indoor environment provided the most consistent and predictable signal behavior. My study suggests that indoor can be benefited from greater stability, particularly in systems requiring low interference and controlled propagation. Moreover, my results showed that the spatial correlation significantly impacts on at both the transmitter and receiver sides. The correlation at BS side is more stable than MS side. Furthermore, this solution method could be applied to help optimize antenna design and placement strategies for indoor wireless communication systems.
 
 \clearpage
 
