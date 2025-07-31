@@ -110,8 +110,8 @@
 
 \pagenumbering{arabic} % Đánh số thứ tự 1,2,3...
 
-\section*{CHAPTER 1. THEORY}
-\addcontentsline{toc}{section}{\numberline{}CHAPTER 1. THEORY}
+\section*{CHAPTER 1. THEORY OF CHANNEL MODELING}
+\addcontentsline{toc}{section}{\numberline{}CHAPTER 1. THEORY OF CHANNEL MODELING}
 \setcounter{section}{1}
 \setcounter{figure}{0}
 \setcounter{table}{0}
@@ -129,12 +129,12 @@ Beyone the angles, the spherical unit vectors are also defined in the coordinate
 
 \subsection{Spatial correlation function}
 
-The spatial - temporal correlation function of $2 \times 2$ antenna system is calculated by the time average operator as \cite{final_exam}:
+The authors in \cite{scm_onering} indicated that by replacing $H_{us}(f,t)$ in the definition formula with that one calculated by Fourier transform of the impulse response, they obtained $H_{us}(f,t)$ in the equation \ref{ptTQ}. After that, by applying the average equation overtime, they obtained the spatial - temporal correlation function SCM in MIMO of $2 \times 2$. With this method, the spatial - temporal correlation function of $2 \times 2$ antenna system is calculated as \cite{final_exam}:
 
 \begin{adjustwidth}{-2cm}{0cm}
 \begin{equation} \label{ptTQ}
 \begin{split}
-    \rho(\Delta d_S, \Delta d_u, \Delta t, \Delta f = 0)=\left\langle H_{u_1, s_1}(f,t) \times H_{u_2, s_2}^* (f,t+\Delta t) \right\rangle = \\
+    \rho(\Delta d_s, \Delta d_u, \Delta t, \Delta f = 0)=\left\langle H_{u_1, s_1}(f,t) \times H_{u_2, s_2}^* (f,t+\Delta t) \right\rangle = \\
     \sum_{n=1}^{N}\sqrt{\frac{P_n}{M}}\sum_{n=1}^M
     \Bigg(
     \exp \Big( \frac{j2\pi(\hat{r}_{rx,n,m}^T \times \Delta \overline d_{rx,u}}{\lambda_0} \Big) \\
@@ -144,6 +144,9 @@ The spatial - temporal correlation function of $2 \times 2$ antenna system is ca
 \end{split}
 \end{equation}
 \end{adjustwidth}
+
+Whereby, the $\Delta d_S$ and $\Delta d_u$ is the distance between each antenna in Base Station (BS) and Mobile Station (MS) sides. Set $\Delta f = 0$ to inspect the same frequency and focus on the spatial correlation properties. In the channel model, $N$ is the number of paths in SCM method, and $M$ denotes the amount of sub-paths in each path \cite{scm_onering}. $\hat{r}_{rx,n,m}$ is the unit vector pointing to AoA of the $m$-th sub-path of the $n$-th path. $\Delta \overline d_{rx, u}$ and $\Delta \overline d_{tx, s}$ are the relative position vectors of the receiver and transmitter antenna element. $\overline v$ is the velocity vector of the MS.
+
 
 Set $\Delta t = \Delta f = 0$ and $\Delta d_u = 0$, the cross spatial correlation function of the channel at the transmitter is presented as \cite{final_exam}: 
 \begin{adjustwidth}{-2cm}{0cm}
@@ -163,18 +166,18 @@ The cross spatial correlation function at the receiver when $\Delta t = \Delta f
 \end{equation}
 \end{adjustwidth}
 
-In the next chapter, I will analyze the cross spatial correlation function at both transmitter and receiver sides. Moreover, at each side, I will inspect the spatial correlation in three environments: Urban Micro, Rural Macro and Indoor.
+In the next chapter, I will analyze the cross spatial correlation function at both transmitter and receiver sides by simulation method. Moreover, at each side, I will inspect the spatial correlation in three environments: Urban Micro, Rural Macro and Indoor.
 
 \clearpage
 
-\section*{CHAPTER 2. SIMULATION}
+\section*{CHAPTER 2. SIMULATING THE SPATIAL CORRELATION}
 \setcounter{section}{2}
 \setcounter{figure}{0}
 \setcounter{table}{0}
 \setcounter{subsection}{0}
-\addcontentsline{toc}{section}{\numberline{}CHAPTER 2. SIMULATION}
+\addcontentsline{toc}{section}{\numberline{}CHAPTER 2. SIMULATING THE SPATIAL CORRELATION}
 
-\subsection{BS Side}
+\subsection{Simulation at the BS Side}
 %\subsubsection{Definition}
 
 %Sửa lại theo cô chữa lưu ở laptop
@@ -194,7 +197,7 @@ In contrast, low amplitude values appear at several positions, reflecting weaker
 % In conclusion, the Indoor environment is the most favorable because of its stable and conditions. Unlike outdoors, it is not affected by weather factors such as sunlight, rain, \dots, as a result, signal transmission is more consistent and dependable.
 In conclusion, the Indoor environment is the most favorable in BS side because the more we decrease the frequency, the more influence is reduced. In addition, this environment is the first to hit an amplitude value equal zero.
 
-\subsection{MS side}
+\subsection{Simulation at the MS side}
 The receiver spatial correlation function is illustrated in Figure \ref{figure3}. This graph gives information at the MS side in three environments same as the BS side. The curves show a sine wave pattern with decreasing peak values.
 
 \begin{figure}[!ht]
