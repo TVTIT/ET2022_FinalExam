@@ -129,7 +129,7 @@ Beyone the angles, the spherical unit vectors are also defined in the coordinate
 
 \subsection{Spatial correlation function}
 
-The authors in \cite{scm_onering} indicated that by replacing $H_{us}(f,t)$ in the definition formula with that one calculated by Fourier transform of the impulse response, they obtained $H_{us}(f,t)$ in the equation \ref{ptTQ}. After that, by applying the average equation overtime, they obtained the spatial - temporal correlation function SCM in MIMO of $2 \times 2$. With this method, the spatial - temporal correlation function of $2 \times 2$ antenna system is calculated as \cite{final_exam}:
+The spatial - temporal correlation function of $2 \times 2$ antenna system is calculated by the time average operator as \cite{final_exam}:
 
 \begin{adjustwidth}{-2cm}{0cm}
 \begin{equation} \label{ptTQ}
@@ -145,7 +145,9 @@ The authors in \cite{scm_onering} indicated that by replacing $H_{us}(f,t)$ in t
 \end{equation}
 \end{adjustwidth}
 
-Whereby, the $\Delta d_S$ and $\Delta d_u$ is the distance between each antenna in Base Station (BS) and Mobile Station (MS) sides. Set $\Delta f = 0$ to inspect the same frequency and focus on the spatial correlation properties. In the channel model, $N$ is the number of paths in SCM method, and $M$ denotes the amount of sub-paths in each path \cite{scm_onering}. $\hat{r}_{rx,n,m}$ is the unit vector pointing to AoA of the $m$-th sub-path of the $n$-th path. $\Delta \overline d_{rx, u}$ and $\Delta \overline d_{tx, s}$ are the relative position vectors of the receiver and transmitter antenna element. $\overline v$ is the velocity vector of the MS.
+The $\Delta d_S$ and $\Delta d_u$ in equation \ref{ptTQ} is the distance between each antenna in Base Station (BS) and Mobile Station (MS) sides. Set $\Delta f = 0$ to inspect the same frequency and focus on the spatial correlation properties. In the channel model, $N$ is the number of paths, and $M$ denotes the amount of sub-paths in each path \cite{scm_onering}. $\hat{r}_{rx,n,m}$ is the unit vector pointing to AoA of the $m$-th sub-path of the $n$-th path. $\Delta \overline d_{rx, u}$ and $\Delta \overline d_{tx, s}$ are the relative position vectors of the receiver and transmitter antenna element. $\overline v$ is the velocity vector of the MS.
+
+The time average operator in equation \ref{ptTQ} is formally defined as $\lim_{T\rightarrow\infty} \frac{1}{2T} \int_{-T}^{T} x(t)dt$ and represented by the angle brackets $\left\langle \cdot \right\rangle$. This operation is used for the purpose of eliminating the time dependency $t$ and focusing on the time difference $\Delta t$. In result, any elements that depend on $t$ was eliminated, leaving only components depend on $\Delta t$. Elements that not depend on $t$ (like space phase or amplitude) will not change. \cite{scm_onering}
 
 
 Set $\Delta t = \Delta f = 0$ and $\Delta d_u = 0$, the cross spatial correlation function of the channel at the transmitter is presented as \cite{final_exam}: 
