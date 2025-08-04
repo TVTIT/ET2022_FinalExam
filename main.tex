@@ -127,6 +127,17 @@ Beyone the angles, the spherical unit vectors are also defined in the coordinate
     \label{coordinate}
 \end{figure}
 
+\subsection{Scenarios in chanel modeling}
+\subsubsection{Urban Micro (UMi)}
+The UMi environment represents urban microcell scenarios characterized by dense buildings, narrow streets, and moderate user mobility. In this scenario, the BS antenna height $\mathrm{h}_{BS}$ is 10m. This height is normally shorter than surrounding buildings, typical for producing micro-urban where the BSs are below the roof level. In addition, the UT mobility (measured in horizontal planes only) is 3km/h. This speed is the same as human walking speed. In addition, the minimum distance between BS and UT in 2D space is 10m. \cite{ETSI5G}
+
+\subsubsection{Rural Macro (RMa)}
+In RMa scenario, model rural or suburban environments need wide and continuous coverage. Also, this scenario requires supporting high-speed cars. The first parameter we should focus on is BS antenna height $\mathrm{h}_{BS}$ which have the value of 35m. This height is commonly for BS macro TRP and set up above roof level of surrounding buildings to optimize wide coverage. Secondly, the UT height $\mathrm{h}_{UT}$ is 1.5m, which is basic height for users’ device when using normally. Thirdly, the UT mobility is the same as the UMi environment. The last parameter is the minimum distance between the BS and UT in 2D space is 35m. \cite{ETSI5G}
+
+\subsubsection{Indoor}
+In this part, the parameters for scenarios “Open office” and “Mixed office” are introduced. Both of them have the same parameters. The BS antenna height $\mathrm{h}_{BS}$ is 3m which is on the ceiling. Setting up the antenna on the ceiling is a popular design, it helps optimize coverage and interference reduction in closed environments. Furthermore, the UT height $\mathrm{h}_{UT}$ is 1m. This is a typical height for a user terminal, such as when placed on a desk or held by a sitting user. Moreover, the UT mobility is the same as UMi – Street canyon scenario. The last one is the minimum distance between the BS and UT in 2D space is 0m. This parameter lets the UT stay very close to the BS, which is useful for testing short-distance communication. Note that the LOS probability is the only difference between both scenarios. \cite{ETSI5G}
+
+
 \subsection{Spatial correlation function}
 
 The spatial - temporal correlation function of $2 \times 2$ antenna system is calculated by the time average operator as \cite{final_exam}:
